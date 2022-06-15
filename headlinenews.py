@@ -15,3 +15,6 @@ print(title)
 
 # 오후 2시~오후 3시까지 집계한 결과입니다.
 print(title.text)
+
+# strip -> 양쪽 공백 없어짐 
+print(title.text.strip())
