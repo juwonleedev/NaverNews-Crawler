@@ -8,10 +8,11 @@ header = {'User-agent' : 'Mozila/2.0'}
 response = requests.get("https://news.naver.com/main/main.naver?mode=LSD&mid=shm&sid1=100", headers=header)
 html = response.text
 soup = BeautifulSoup(html, 'html.parser')
-title = soup.select_one('.section_sub_txt')
+titles = soup.select('.cluster_text')
 
-# <p class="section_sub_txt">오후 2시~오후 3시까지 집계한 결과입니다.</p>
-print(title)
+# list 
+print(titles)
 
-# 오후 2시~오후 3시까지 집계한 결과입니다.
-print(title.text)
+# test of lists - 공백제거 
+for title in titles : 
+    print(title.text.strip())
